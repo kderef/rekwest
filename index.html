@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <h1>Rekwest</h1>
+    <div class="row">
+        <input type="text" placeholder="URL" id="url">
+        <button id="btn-post">post</button>
+        <button id="btn-get">get</button>
+    </div>
+    <hr>
+
+    <h2>Payload <span style="color: gray">(optional, POST only)</span></h2>
+    <textarea name="payload" id="payload" cols="62" rows="3"></textarea>
+    <hr>
+
+    <h2>Response <span style="color: gray">(JSON)</span></h2>
+    <textarea name="response" id="response" cols="62" rows="12"></textarea>
+  </body>
+</html>
