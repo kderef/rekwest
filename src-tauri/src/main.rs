@@ -3,6 +3,11 @@
 
 use chttp::prelude::*;
 
+#[tauri::command]
+fn os() -> &'static str {
+    return std::env::consts::OS;
+}
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command(async)]
 fn post(url: String, payload: String) -> Result<String, String> {
@@ -22,7 +27,7 @@ fn get(url: String) -> Result<String, String> {
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![post, get])
+        .invoke_handler(tauri::generate_handler![post, get, os])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -14,6 +14,10 @@
     -webkit-text-size-adjust: 100%;
 }
 
+button + button {
+    margin-left: 0.5rem;
+}
+
 .container {
     margin: 0;
     padding-top: 10vh;
@@ -86,6 +90,7 @@ button {
 
 textarea {
     font-size: small;
+    resize: none;
 }
 
 button {

@@ -1,7 +1,9 @@
 import { invoke } from "@tauri-apps/api/tauri";
 import { message } from "@tauri-apps/api/dialog";
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
+    const os = await invoke<string>("os");
+
     let urlInput = document.querySelector<HTMLInputElement>("#url")!;
 
     let btnPost = document.querySelector<HTMLButtonElement>("#btn-post")!;
@@ -9,6 +11,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let response = document.querySelector<HTMLTextAreaElement>("#response")!;
     let payloadIn = document.querySelector<HTMLTextAreaElement>("#payload")!;
+
+    if (os === "windows") {
+        response.cols = 72;
+        payloadIn.cols = 72;
+    }
 
     btnPost.addEventListener("click", async () => {
         const val = urlInput.value.trim();

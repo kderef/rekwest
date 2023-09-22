@@ -45,13 +45,13 @@
       "active": false
     },
     "windows": [
-        {
-          "fullscreen": false,
-          "resizable": false,
-          "title": "Rekwest",
-          "width": 550,
-          "height": 600
-        }
-      ]
+      {
+        "fullscreen": false,
+        "resizable": false,
+        "title": "Rekwest",
+        "width": 503,
+        "height": 612
+      }
+    ]
   }
 }
